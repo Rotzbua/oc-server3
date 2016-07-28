@@ -336,13 +336,28 @@ $opt['logic']['cracklib'] = false;
 
 /* password authentication method
  * (true means extra hash on the digested password)
+ * @deprecated
  */
 $opt['logic']['password_hash'] = false;
 
 /* password salt
  * is a random generated String that is appended to the password
- */
+ * @deprecated
+*/
 $opt['logic']['password_salt'] = '';
+
+/* optional performance adjustment for password hashing
+ * only use if you have real issues and know what you do
+ * @link http://www.php.net/manual/en/password.constants.php
+ * values: null (default) | see @link
+ */
+$opt['logic']['password_hash_algo'] = null;
+
+/* optional performance adjustment for password hashing
+ * only use if you have real issues and know what you do
+ * values: null (default) | positive int
+ */
+$opt['logic']['password_hash_cost'] = null;
 
 /* new lows style
  */

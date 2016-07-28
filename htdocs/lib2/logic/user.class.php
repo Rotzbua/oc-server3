@@ -200,9 +200,9 @@ class user
             return false;
         }
 
-        $encryptedPassword = crypt::encryptPassword($password);
-
-        return $this->reUser->setValue('password', $encryptedPassword);
+        $hashedPassword = Password::hash($password);
+    
+        return $this->reUser->setValue('password', $hashedPassword); // todo
     }
 
     public function getFirstName()
